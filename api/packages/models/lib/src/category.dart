@@ -2,17 +2,25 @@ import 'package:equatable/equatable.dart';
 import 'package:uuid/uuid.dart';
 
 class Category extends Equatable {
-  final String id;
-  final String name;
-  final String description;
-  final String? imageUrl;
-
-  Category({
+  const Category({
     required this.id,
     required this.name,
     required this.description,
     this.imageUrl,
   });
+
+  factory Category.fromJson(Map<String, dynamic> json) => Category(
+        id: json['id'] ?? const Uuid().v4(),
+        name: json['name'] ?? '',
+        description: json['description'] ?? '',
+        imageUrl:
+            json['imageUrl'] ?? 'https://source.unsplash.com/random/?category',
+      );
+
+  final String id;
+  final String name;
+  final String description;
+  final String? imageUrl;
 
   Category copyWith({
     String? id,
@@ -31,14 +39,6 @@ class Category extends Equatable {
   @override
   List<Object?> get props => [id, name, description, imageUrl];
 
-  factory Category.fromJson(Map<String, dynamic> json) => Category(
-        id: json['id'] ?? Uuid().v4(),
-        name: json['name'] ?? '',
-        description: json['description'] ?? '',
-        imageUrl:
-            json['imageUrl'] ?? 'https://source.unsplash.com/random/?category',
-      );
-
   Map<String, dynamic> toJson() => {
         'id': id,
         'name': name,
@@ -48,13 +48,13 @@ class Category extends Equatable {
 
   static List<Category> sampleData = [
     Category(
-      id: Uuid().v4(),
+      id: const Uuid().v4(),
       name: 'Fruits',
       description: 'A category for all kinds of fruits.',
       imageUrl: 'https://source.unsplash.com/random/?fruit',
     ),
     Category(
-      id: Uuid().v4(),
+      id: const Uuid().v4(),
       name: 'Vegetables',
       description: 'A category for all kinds of vegetables.',
       imageUrl: 'https://source.unsplash.com/random/?vegetable',

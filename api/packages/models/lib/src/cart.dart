@@ -8,7 +8,7 @@ class Cart extends Equatable {
   final String userId;
   final List<CartItem> cartItems;
 
-  Cart({
+  const Cart({
     required this.userId,
     required this.cartItems,
   });
@@ -46,12 +46,12 @@ class Cart extends Equatable {
 
   static List<Cart> sampleData = [
     Cart(
-      userId: Uuid().v4(),
+      userId: const Uuid().v4(),
       cartItems: [
         CartItem(
-          id: Uuid().v4(),
+          id: const Uuid().v4(),
           product: Product(
-            id: Uuid().v4(),
+            id: const Uuid().v4(),
             description: 'A delicious apple.',
             name: 'Apple',
             price: 1.99,
@@ -62,9 +62,9 @@ class Cart extends Equatable {
           subtotal: 9.95,
         ),
         CartItem(
-          id: Uuid().v4(),
+          id: const Uuid().v4(),
           product: Product(
-            id: Uuid().v4(),
+            id: const Uuid().v4(),
             description: 'A delicious orange.',
             name: 'Orange',
             price: 0.99,
@@ -77,12 +77,12 @@ class Cart extends Equatable {
       ],
     ),
     Cart(
-      userId: Uuid().v4(),
+      userId: const Uuid().v4(),
       cartItems: [
         CartItem(
-          id: Uuid().v4(),
+          id: const Uuid().v4(),
           product: Product(
-            id: Uuid().v4(),
+            id: const Uuid().v4(),
             name: 'Banana',
             description: 'A delicious banana.',
             price: 0.69,

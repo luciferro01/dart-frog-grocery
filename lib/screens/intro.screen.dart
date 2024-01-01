@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:video_player/video_player.dart';
 
 class IntroScreen extends StatefulWidget {
-  const IntroScreen({Key? key}) : super(key: key);
+  const IntroScreen({super.key});
 
   @override
   State<IntroScreen> createState() => _IntroScreenState();

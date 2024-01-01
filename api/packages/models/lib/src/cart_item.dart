@@ -9,7 +9,7 @@ class CartItem extends Equatable {
   final int quantity;
   final double subtotal;
 
-  CartItem({
+  const CartItem({
     required this.id,
     required this.product,
     required this.quantity,
@@ -53,13 +53,13 @@ class CartItem extends Equatable {
 
   static List<CartItem> sampleData = [
     CartItem(
-      id: Uuid().v4(),
+      id: const Uuid().v4(),
       product: Product.sampleData[0],
       quantity: 1,
       subtotal: Product.sampleData[0].price,
     ),
     CartItem(
-      id: Uuid().v4(),
+      id: const Uuid().v4(),
       product: Product.sampleData[1],
       quantity: 2,
       subtotal: Product.sampleData[1].price * 2,

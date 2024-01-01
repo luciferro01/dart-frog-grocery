@@ -67,7 +67,7 @@ class Product extends Equatable {
 
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
-      id: json['id'] ?? Uuid().v4(),
+      id: json['id'] ?? const Uuid().v4(),
       name: json['name'] ?? '',
       description: json['description'] ?? '',
       price: json['price'] ?? 0.0,
@@ -94,7 +94,7 @@ class Product extends Equatable {
 
   static List<Product> sampleData = [
     Product(
-      id: Uuid().v4(),
+      id: const Uuid().v4(),
       name: 'Banana',
       description: 'A delicious and healthy fruit',
       price: 0.99,
